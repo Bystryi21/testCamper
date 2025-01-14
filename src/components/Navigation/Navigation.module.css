@@ -1,0 +1,18 @@
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+}
+
+.navigation {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #101828;
+  text-decoration: none;
+}
+
+.navigation:hover {
+  color: #d84343;
+}
