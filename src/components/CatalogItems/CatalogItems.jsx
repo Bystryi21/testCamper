@@ -10,8 +10,14 @@ import Van from "../Icons/Van";
 import css from "./CatalogItems.module.css";
 import Alcove from "../Icons/Alcove";
 import { Formik, Form } from "formik";
+import CatalogCard from "../CatalogCard/CatalogCard";
+import { useSelector } from "react-redux";
+import { selectCars } from "../../redux/selectors";
 
 export default function CatalogItems() {
+  const allCars = useSelector(selectCars);
+  console.log(allCars);
+
   return (
     <div className={css.container}>
       <Formik>
@@ -74,8 +80,26 @@ export default function CatalogItems() {
               </div>
             </div>
           </div>
+          <button type="submit" className={css.searchBtn}>
+            Search
+          </button>
         </Form>
       </Formik>
+
+      <ul className={css.cardWrapper}>
+        {allCars.map((item) => (
+          <li className={css.cardItem} key={item.id}>
+            <CatalogCard
+              name={item.name}
+              rating={item.rating}
+              location={item.location}
+              description={item.description}
+              price={item.price}
+              img={item.gallery}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
