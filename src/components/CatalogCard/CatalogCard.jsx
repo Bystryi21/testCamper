@@ -5,19 +5,23 @@ import Location from "../Icons/Location";
 import { Link } from "react-router-dom";
 
 export default function CatalogCard({
-  price,
-  description,
-  location,
-  rating,
-  name,
-  gallery,
-  id,
+  // price,
+  // description,
+  // location,
+  // rating,
+  // name,
+  // gallery,
+  // id,
   // reviews,
+  value,
 }) {
+  const { price, description, location, rating, name, gallery, id, reviews } =
+    value;
+
   return (
     <div className={css.contentContainer}>
       <div className={css.imgWrapper}>
-        <img src={gallery} alt={name} className={css.img} />
+        <img src={gallery[0].original} alt={name} className={css.img} />
       </div>
       <div className={css.contentWrapper}>
         <h3 className={css.cardTitle}>{name}</h3>
@@ -25,6 +29,7 @@ export default function CatalogCard({
           <div className={css.rating}>
             <StarYellow />
             {rating}
+            {`(${reviews.length} Reviews)`}
           </div>
           <div className={css.locationWrapper}>
             <Location className={css.locationSvg} />

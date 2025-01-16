@@ -8,7 +8,7 @@
   border-radius: 10px;
   width: 292px;
   height: 320px;
-  background-color: brown;
+  object-fit: cover;
 }
 
 .cardTitle {
@@ -27,6 +27,7 @@
   font-size: 16px;
   line-height: 1.5;
   color: #101828;
+  text-decoration: underline;
 }
 
 .locationWrapper {
