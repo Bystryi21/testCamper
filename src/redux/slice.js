@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCars } from "./operations";
+import { fetchById, fetchCars } from "./operations";
 
 export const initialState = {
   items: [],
+  carDetails: {},
   loading: false,
   error: null,
 };
@@ -20,6 +21,17 @@ const slice = createSlice({
         state.loading = false;
       })
       .addCase(fetchCars.rejected, (state) => {
+        state.error = true;
+        state.loading = false;
+      })
+      .addCase(fetchById.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchById.fulfilled, (state, action) => {
+        state.carDetails = action.payload;
+        state.loading = false;
+      })
+      .addCase(fetchById.rejected, (state) => {
         state.error = true;
         state.loading = false;
       });

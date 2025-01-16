@@ -4,6 +4,7 @@
   padding-right: 64px;
   padding-left: 64px;
   display: flex;
+  gap: 64px;
 }
 
 .locationWrapper {
@@ -138,18 +139,4 @@
   width: 32px;
   height: 32px;
   object-fit: contain;
-}
-
-.cardWrapper {
-  list-style: none;
-  position: relative;
-}
-
-.cardItem {
-  border: 1px solid #dadde1;
-  border-radius: 20px;
-  padding: 24px;
-  width: 840px;
-  height: 320px;
-  background-color: #ffff;
 }

@@ -19,11 +19,34 @@
 .reviewAndLocationWrapper {
   display: flex;
   padding-bottom: 24px;
+  align-items: center;
+}
+
+.rating {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+}
+
+.locationWrapper {
+  display: flex;
+  gap: 4px;
+  padding-left: 16px;
+}
+
+.locationSvg {
+  width: 16px;
+  height: 16px;
 }
 
 .textAbout {
   margin: 0;
   padding-bottom: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
 }
 
 .comfortList {
@@ -66,4 +89,5 @@
   line-height: 1.5;
   letter-spacing: -0.01em;
   color: #fff;
+  text-decoration: none;
 }

@@ -1,5 +1,8 @@
 import Favourite from "../Icons/Favourite";
+import StarYellow from "../Icons/StarYellow";
 import css from "./CatalogCard.module.css";
+import Location from "../Icons/Location";
+import { Link } from "react-router-dom";
 
 export default function CatalogCard({
   price,
@@ -8,6 +11,8 @@ export default function CatalogCard({
   rating,
   name,
   gallery,
+  id,
+  // reviews,
 }) {
   return (
     <div className={css.contentContainer}>
@@ -17,16 +22,22 @@ export default function CatalogCard({
       <div className={css.contentWrapper}>
         <h3 className={css.cardTitle}>{name}</h3>
         <div className={css.reviewAndLocationWrapper}>
-          <div>{rating}</div>
-          <div>{location}</div>
+          <div className={css.rating}>
+            <StarYellow />
+            {rating}
+          </div>
+          <div className={css.locationWrapper}>
+            <Location className={css.locationSvg} />
+            {location}
+          </div>
         </div>
         <p className={css.textAbout}>{description} </p>
         <ul className={css.comfortList}>
           <li className={css.comfortItem}>Automatic</li>
         </ul>
-        <button type="button" className={css.showMoreBtn}>
+        <Link to={`/campers/${id}`} className={css.showMoreBtn}>
           Show more
-        </button>
+        </Link>
 
         <div className={css.priceAndFavouriteWrapper}>
           <div>€{price}</div>

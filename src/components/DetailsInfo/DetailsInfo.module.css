@@ -1,0 +1,39 @@
+.detailsWrapper {
+  max-width: 1312px;
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-top: 48px;
+}
+
+.reviewAndLocationWrapper {
+  display: flex;
+  padding-bottom: 24px;
+  align-items: center;
+}
+
+.rating {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  text-decoration: underline;
+}
+
+.locationWrapper {
+  display: flex;
+  gap: 4px;
+  padding-left: 16px;
+}
+
+.locationSvg {
+  width: 16px;
+  height: 16px;
+}
+
+.listReviewAndFeatures {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 40px;
+  padding-top: 60px;
+}
