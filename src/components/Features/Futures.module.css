@@ -1,0 +1,44 @@
+.wrapperTwoBlocks {
+  display: flex;
+  gap: 40px;
+}
+
+.container {
+  border-radius: 10px;
+  padding: 44px 52px;
+  max-width: 527px;
+  background: #f7f7f7;
+  margin-top: 44px;
+}
+
+.wrapper {
+  max-width: 527px;
+}
+
+.line {
+  width: 527px;
+  stroke-width: 1px;
+  stroke: #dadde1;
+}
+
+.infoWrapper {
+  display: flex;
+  max-width: 527px;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  margin: 0;
+}
+
+.textIn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #101828;
+}

@@ -9,11 +9,13 @@ import {
   REGISTER,
 } from "redux-persist";
 
-import carsReducer from "../redux/slice";
+import carsReducer from "../redux/campers/slice";
+import filtersReducer from "../redux/filters/slice";
 
 export const store = configureStore({
   reducer: {
     cars: carsReducer,
+    filters: filtersReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

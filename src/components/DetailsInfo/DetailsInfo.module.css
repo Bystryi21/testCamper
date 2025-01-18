@@ -5,9 +5,18 @@
   padding-top: 48px;
 }
 
+.mainTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #101828;
+  padding-bottom: 8px;
+  margin: 0;
+}
+
 .reviewAndLocationWrapper {
   display: flex;
-  padding-bottom: 24px;
+  padding-bottom: 16px;
   align-items: center;
 }
 
@@ -30,10 +39,69 @@
   height: 16px;
 }
 
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #101828;
+}
+
+.imgList {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 48px;
+  max-width: 1312px;
+}
+
+.imgCollection {
+  border-radius: 10px;
+  width: 292px;
+  height: 312px;
+  object-fit: cover;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  margin: 0;
+}
+
 .listReviewAndFeatures {
   list-style: none;
   padding-left: 0;
   display: flex;
   gap: 40px;
   padding-top: 60px;
+  margin: 0;
+  padding-bottom: 24px;
+}
+
+.navigation {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  /*  */
+  position: relative;
+}
+
+.navigation::after {
+  content: "";
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  width: 85px;
+  height: 2px;
+  background-color: #e44848;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navigation:hover::after,
+.navigation:active::after {
+  opacity: 1;
+  transform: scaleX(1);
 }

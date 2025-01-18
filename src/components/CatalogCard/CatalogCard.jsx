@@ -3,6 +3,7 @@ import StarYellow from "../Icons/StarYellow";
 import css from "./CatalogCard.module.css";
 import Location from "../Icons/Location";
 import { Link } from "react-router-dom";
+import FeaturesList from "../FeaturesList/FeaturesList";
 
 export default function CatalogCard({
   // price,
@@ -37,13 +38,14 @@ export default function CatalogCard({
           </div>
         </div>
         <p className={css.textAbout}>{description} </p>
-        <ul className={css.comfortList}>
-          <li className={css.comfortItem}>Automatic</li>
-        </ul>
-        <Link to={`/campers/${id}`} className={css.showMoreBtn}>
-          Show more
-        </Link>
+        {/* <FeaturesList value={value} /> */}
+        <FeaturesList itemData={value} variant="catalog" />
 
+        <div>
+          <Link to={`/campers/${id}`} className={css.showMoreBtn}>
+            Show more
+          </Link>
+        </div>
         <div className={css.priceAndFavouriteWrapper}>
           <div>€{price}</div>
           <div>

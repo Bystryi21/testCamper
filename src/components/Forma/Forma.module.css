@@ -1,0 +1,59 @@
+.wrapper {
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 44px 57px;
+  max-width: 641px;
+  max-height: 588px;
+  margin-top: 44px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  padding-bottom: 8px;
+}
+
+.text {
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 24px;
+}
+
+.input {
+  border-radius: 12px;
+  padding: 18px 337px 18px 18px;
+  border: none;
+  background: #f7f7f7;
+  max-width: 527px;
+}
+
+.textArea {
+  border-radius: 10px;
+  padding: 18px 345px 76px 18px;
+  max-width: 527px;
+  max-height: 118px;
+  border: none;
+  background: #f7f7f7;
+}
+
+.btn {
+  border-radius: 200px;
+  padding: 16px 60px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #fff;
+  background: #e44848;
+  border: none;
+  max-width: 166px;
+  margin: 0 auto;
+}

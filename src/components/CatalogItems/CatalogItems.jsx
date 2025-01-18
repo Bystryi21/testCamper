@@ -12,8 +12,15 @@ import Alcove from "../Icons/Alcove";
 import { Formik, Form } from "formik";
 
 import CatalogList from "../CatalogList/CatalogList";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchCars } from "../../redux/campers/operations";
 
 export default function CatalogItems() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCars());
+  }, [dispatch]);
   return (
     <div className={css.container}>
       <Formik>

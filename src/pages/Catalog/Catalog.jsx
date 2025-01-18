@@ -1,15 +1,15 @@
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import AppBar from "../../components/AppBar/AppBar";
 import CatalogItems from "../../components/CatalogItems/CatalogItems";
-import { useEffect } from "react";
-import { fetchCars } from "../../redux/operations";
+// import { useEffect } from "react";
+// import { fetchCars } from "../../redux/campers/operations";
 
 export default function Catalog() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchCars());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchCars());
+  // }, [dispatch]);
   return (
     <>
       <AppBar />
