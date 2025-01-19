@@ -7,10 +7,17 @@ export const fetchCars = createAsyncThunk(
   "cars/fetchAll",
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get("/campers");
+      const { location } = thunkAPI.getState().filters;
+
+      const params = new URLSearchParams();
+      if (location) {
+        params.append("location", location);
+      }
+
+      const response = await axios.get(`/campers?${params.toString()}`);
       return response.data.items;
-    } catch {
-      return thunkAPI.rejectWithValue();
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );

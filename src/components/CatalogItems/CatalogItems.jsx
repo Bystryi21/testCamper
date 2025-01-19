@@ -13,17 +13,35 @@ import { Formik, Form } from "formik";
 
 import CatalogList from "../CatalogList/CatalogList";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchCars } from "../../redux/campers/operations";
+import { setLocation } from "../../redux/filters/slice";
 
 export default function CatalogItems() {
   const dispatch = useDispatch();
+  const location = useSelector((state) => state.filters.location);
+
   useEffect(() => {
     dispatch(fetchCars());
   }, [dispatch]);
+
+  const handleSubmit = async (values, formikBag) => {
+    try {
+      await dispatch(fetchCars()).unwrap();
+      dispatch(setLocation(""));
+      formikBag.resetForm();
+    } catch (error) {
+      console.error("Error fetching cars:", error);
+    }
+  };
+
+  const handleLocationChange = (e) => {
+    dispatch(setLocation(e.target.value));
+  };
+
   return (
     <div className={css.container}>
-      <Formik>
+      <Formik initialValues={{ location: location }} onSubmit={handleSubmit}>
         <Form>
           <div className={css.locationWrapper}>
             <p className={css.titleLocation}>Location</p>
@@ -33,8 +51,11 @@ export default function CatalogItems() {
 
             <input
               type="text"
+              name="location"
               placeholder="Kyiv, Ukraine"
               className={css.locationInput}
+              value={location}
+              onChange={handleLocationChange}
             />
           </div>
           <div>
