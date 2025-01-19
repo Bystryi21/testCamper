@@ -7,7 +7,7 @@ export const fetchCars = createAsyncThunk(
   "cars/fetchAll",
   async (_, thunkAPI) => {
     try {
-      const { location, equipment, vehicleType } = thunkAPI.getState().filters;
+      const { location, equipment, form } = thunkAPI.getState().filters;
 
       const params = new URLSearchParams();
 
@@ -23,8 +23,8 @@ export const fetchCars = createAsyncThunk(
         }
       });
 
-      if (vehicleType) {
-        params.append("vehicleType", vehicleType);
+      if (form) {
+        params.append("form", form);
       }
 
       const response = await axios.get(`/campers?${params.toString()}`);

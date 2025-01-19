@@ -127,6 +127,10 @@
   color: #101828;
 }
 
+.filterType.active {
+  border: 1px solid #d84343;
+}
+
 .searchBtn {
   font-weight: 500;
   font-size: 16px;

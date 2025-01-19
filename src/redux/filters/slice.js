@@ -5,12 +5,11 @@ export const filtersSlice = createSlice({
   initialState: {
     location: "",
     equipment: [],
-    vehicleType: "",
+    form: "",
   },
   reducers: {
     toggleEquipment: (state, action) => {
       const equipment = action.payload;
-
       const equipmentIndex = state.equipment.indexOf(equipment);
       if (equipmentIndex === -1) {
         state.equipment.push(equipment);
@@ -18,9 +17,8 @@ export const filtersSlice = createSlice({
         state.equipment.splice(equipmentIndex, 1);
       }
     },
-    setVehicleType: (state, action) => {
-      state.vehicleType =
-        state.vehicleType === action.payload ? "" : action.payload;
+    selectForm: (state, action) => {
+      state.form = state.form === action.payload ? "" : action.payload;
     },
     setLocation: (state, action) => {
       state.location = action.payload;
@@ -28,7 +26,7 @@ export const filtersSlice = createSlice({
   },
 });
 
-export const { toggleEquipment, setVehicleType, setLocation } =
+export const { toggleEquipment, selectForm, setLocation } =
   filtersSlice.actions;
 
 export default filtersSlice.reducer;
