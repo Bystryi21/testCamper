@@ -1,5 +1,5 @@
 import AC from "../Icons/AC";
-import Automatic from "../Icons/Automatic";
+// import Automatic from "../Icons/Automatic";
 import Bathroom from "../Icons/Batchroom";
 import Fully from "../Icons/Fully";
 import Kitchen from "../Icons/Kitchen";
@@ -15,7 +15,7 @@ import CatalogList from "../CatalogList/CatalogList";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCars } from "../../redux/campers/operations";
-import { setLocation } from "../../redux/filters/slice";
+import { resetFilters, setLocation } from "../../redux/filters/slice";
 import { toggleEquipment } from "../../redux/filters/slice";
 import { selectForm } from "../../redux/filters/slice";
 import { ToastContainer, toast } from "react-toastify";
@@ -34,7 +34,8 @@ export default function CatalogItems() {
   const handleSubmit = async (values, action) => {
     try {
       await dispatch(fetchCars()).unwrap();
-      dispatch(setLocation(""));
+      // dispatch(setLocation(""));
+      dispatch(resetFilters());
       // dispatch(selectForm(""));
       // dispatch(toggleEquipment([]));
 

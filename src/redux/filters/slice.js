@@ -23,10 +23,15 @@ export const filtersSlice = createSlice({
     setLocation: (state, action) => {
       state.location = action.payload;
     },
+    resetFilters(state) {
+      state.location = "";
+      state.equipment = [];
+      state.form = "";
+    },
   },
 });
 
-export const { toggleEquipment, selectForm, setLocation } =
+export const { toggleEquipment, selectForm, setLocation, resetFilters } =
   filtersSlice.actions;
 
 export default filtersSlice.reducer;
