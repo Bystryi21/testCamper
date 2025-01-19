@@ -16,10 +16,13 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCars } from "../../redux/campers/operations";
 import { setLocation } from "../../redux/filters/slice";
+import { toggleEquipment } from "../../redux/filters/slice";
 
 export default function CatalogItems() {
   const dispatch = useDispatch();
   const location = useSelector((state) => state.filters.location);
+
+  const filters = useSelector((state) => state.filters);
 
   useEffect(() => {
     dispatch(fetchCars());
@@ -64,25 +67,45 @@ export default function CatalogItems() {
             <Line />
             <div>
               <div className={css.wrapperAmenities}>
-                <button type="button" className={css.filterAmenities}>
+                <button
+                  type="button"
+                  className={`${css.filterAmenities} ${
+                    filters.equipment.includes("AC") ? css.active : ""
+                  }`}
+                  onClick={() => dispatch(toggleEquipment("AC"))}
+                >
                   <AC />
                   AC
                 </button>
-                <button type="button" className={css.filterAmenities}>
-                  <Automatic />
-                  Automatic
-                </button>
-                <button type="button" className={css.filterAmenities}>
+                <button
+                  type="button"
+                  className={`${css.filterAmenities} ${
+                    filters.equipment.includes("Kitchen") ? css.active : ""
+                  }`}
+                  onClick={() => dispatch(toggleEquipment("Kitchen"))}
+                >
                   <Kitchen />
                   Kitchen
                 </button>
-                <button type="button" className={css.filterAmenities}>
-                  <Tv />
-                  TV
-                </button>
-                <button type="button" className={css.filterAmenities}>
+                <button
+                  type="button"
+                  className={`${css.filterAmenities} ${
+                    filters.equipment.includes("Bathroom") ? css.active : ""
+                  }`}
+                  onClick={() => dispatch(toggleEquipment("Bathroom"))}
+                >
                   <Bathroom />
                   Bathroom
+                </button>
+                <button
+                  type="button"
+                  className={`${css.filterAmenities} ${
+                    filters.equipment.includes("TV") ? css.active : ""
+                  }`}
+                  onClick={() => dispatch(toggleEquipment("TV"))}
+                >
+                  <Tv />
+                  TV
                 </button>
               </div>
 

@@ -93,6 +93,10 @@
   color: #101828;
 }
 
+.filterAmenities.active {
+  border: 1px solid #d84343;
+}
+
 .vehicleTypeTitle {
   font-weight: 600;
   font-size: 20px;

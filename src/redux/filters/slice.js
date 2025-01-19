@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const filtersSlice = createSlice({
+export const filtersSlice = createSlice({
   name: "filters",
   initialState: {
     location: "",
@@ -10,10 +10,13 @@ const filtersSlice = createSlice({
   reducers: {
     toggleEquipment: (state, action) => {
       const equipment = action.payload;
+
       const equipmentIndex = state.equipment.indexOf(equipment);
       if (equipmentIndex === -1) {
         state.equipment.push(equipment);
-      } else state.equipment.splice(equipmentIndex, 1);
+      } else {
+        state.equipment.splice(equipmentIndex, 1);
+      }
     },
     setVehicleType: (state, action) => {
       state.vehicleType =
@@ -22,14 +25,10 @@ const filtersSlice = createSlice({
     setLocation: (state, action) => {
       state.location = action.payload;
     },
-    resetFilters: (state) => {
-      state.equipment = [];
-      state.vehicleType = "";
-      state.location = "";
-    },
   },
 });
 
-export const { toggleEquipment, setVehicleType, setLocation, resetFilters } =
+export const { toggleEquipment, setVehicleType, setLocation } =
   filtersSlice.actions;
+
 export default filtersSlice.reducer;

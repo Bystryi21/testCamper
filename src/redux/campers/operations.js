@@ -7,11 +7,24 @@ export const fetchCars = createAsyncThunk(
   "cars/fetchAll",
   async (_, thunkAPI) => {
     try {
-      const { location } = thunkAPI.getState().filters;
+      const { location, equipment, vehicleType } = thunkAPI.getState().filters;
 
       const params = new URLSearchParams();
+
       if (location) {
         params.append("location", location);
+      }
+
+      equipment.forEach((equip) => {
+        if (equip === "TV" || equip === "AC") {
+          params.append(equip, true);
+        } else {
+          params.append(equip.toLowerCase(), true);
+        }
+      });
+
+      if (vehicleType) {
+        params.append("vehicleType", vehicleType);
       }
 
       const response = await axios.get(`/campers?${params.toString()}`);
